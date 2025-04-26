@@ -50,30 +50,14 @@ class MainMenuState extends MusicBeatState
         menubg.screenCenter();
 		add(menubg);
 
-        storymode = new FlxSprite(350, 300);
-        storymode.frames = Paths.getSparrowAtlas('menus/mainmenu/buttons/storymode');
-        storymode.animation.addByPrefix('storymode', "storymode", 8);
-        storymode.animation.play('storymode');
-        storymode.updateHitbox();
-        // Calculate the center coordinates
-        var centerX:Float = FlxG.width / 2 - storymode.width / 2;
-        var centerY:Float = FlxG.height / 2 - storymode.height / 2;
-        add(storymode);
-
-        // Position options
-        options = new FlxSprite(850, 300);
-        options.frames = Paths.getSparrowAtlas('menus/mainmenu/buttons/options');
-        options.animation.addByPrefix('options', "options", 8);
-        options.animation.play('options');
-        options.updateHitbox();
-        add(options);
-
         // Position freeplay 50 pixels to the left of storymode
-        freeplay = new FlxSprite(100, 300).loadGraphic(Paths.image('menus/mainmenu/MainMENUHouse'));;
+        freeplay = new FlxSprite(100, 300).loadGraphic(Paths.image('menus/mainmenu/MainMENUFreeplay'));
+        freeplay.screenCenter(X); 
         add(freeplay);
 
         // Calculate the position of credits at the top left corner
-        credits = new FlxSprite(0, 100).loadGraphic(Paths.image('menus/mainmenu/MainMENUHouse'));;  // Adjust the coordinates
+        credits = new FlxSprite(0, 100).loadGraphic(Paths.image('menus/mainmenu/MainMENUCredits'));
+        credits.screenCenter(X);  // Adjust the coordinates
         add(credits);        
 
         super.create();
